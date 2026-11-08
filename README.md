@@ -1,5 +1,7 @@
 # Rocket Flight and Telemetry Simulator
 
+**Start here:** [Technical case study](docs/CASE-STUDY.md) · [Cloud verification](docs/VALIDATION.md) · [Reproducible demonstration](docs/DEMO-EVIDENCE.md)
+
 **Type:** Newly built educational physics/programming demo. **Not** Alexander's original academic capstone and must not be represented as such.
 
 ## Objective
