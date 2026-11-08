@@ -21,6 +21,14 @@ class RocketTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             simulate(Config(mass_kg=0))
 
+    def test_nonfinite_input_rejected(self):
+        with self.assertRaisesRegex(ValueError, "finite"):
+            simulate(Config(thrust_newtons=float("nan")))
+
+    def test_step_limit_rejected(self):
+        with self.assertRaisesRegex(ValueError, "step"):
+            simulate(Config(timestep=0.000001, max_time=120))
+
     def test_larger_timestep_changes_numerical_estimate(self):
         fine = max(row["altitude_m"] for row in simulate(Config(timestep=0.005)))
         coarse = max(row["altitude_m"] for row in simulate(Config(timestep=0.05)))
