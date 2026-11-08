@@ -6,7 +6,7 @@ Engineering simulations translate physical assumptions into time-series data. Th
 
 ## Approach
 
-The Python program simulates one-dimensional vertical flight under thrust, gravity, and velocity-dependent drag. It integrates with a configurable timestep, records altitude and velocity, exports CSV telemetry, and draws an SVG altitude chart.
+The Python program simulates one-dimensional vertical flight under thrust, gravity, and velocity-dependent drag. It integrates with a configurable timestep, records altitude and velocity, exports CSV telemetry, and draws SVG charts. The comparison script runs baseline, 15% increased thrust, and 50% increased drag scenarios.
 
 ## Architecture
 
@@ -21,8 +21,8 @@ The Python program simulates one-dimensional vertical flight under thrust, gravi
 
 ## Demonstrated outcome
 
-Five tests passed in the cloud environment. The default parameter set produced a simulated apogee around 156 meters. The model intentionally omits variable propellant mass, staging, wind, and altitude-dependent atmosphere.
+Twelve tests passed in the latest cloud environment. The baseline simulated apogee was approximately **156.4 m**, higher-thrust **203.6 m**, and higher-drag **144.1 m**. These are calculated, not physical flight measurements. Invalid non-finite parameters and excessive integration-step counts are rejected. The model omits variable propellant mass, staging, wind, and altitude-dependent atmosphere.
 
 ## Next personal contribution
 
-Alexander can add a two-configuration overlay graph, parameter sensitivity report, or a more accurate integration method and document the tradeoffs. If he wants to showcase his original college capstone, that must be a separate case study based on the original code and evidence.
+Alexander can add a fourth independently chosen scenario and quantify how the numerical outcome changes. His original college capstone must remain a separate case study based on authentic original code and evidence.
