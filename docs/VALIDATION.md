@@ -1,5 +1,7 @@
 # Cloud Validation — November 8, 2026
 
+> **Current: 12/12 Python tests passed.** Earlier counts below are historical checkpoints. Outputs are simulations, not measured launches.
+
 **Execution:** ChatGPT-managed Linux environment, Python 3.12.14. AI-assisted cloud testing; not Alexander's original academic capstone.
 
 ## Reproduce
