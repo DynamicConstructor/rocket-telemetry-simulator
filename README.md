@@ -51,3 +51,10 @@ Default settings produce an approximate **156 m apogee** and **12.7-second fligh
 ## Resume use
 
 Describe this as a **personal simulation project** only after Alexander has personally run, understood, and extended it. His original school rocket capstone should be documented separately if original evidence becomes available.
+
+## Portfolio evidence and technical review
+
+- [Cloud validation report](docs/VALIDATION.md) — dated test results and limitations
+- [Technical case study](docs/CASE-STUDY.md) — problem, approach, engineering decisions, and next personal contribution
+
+The cloud run was AI-assisted; it does not establish Alexander's independent authorship. GitHub Actions may be unavailable due to an account-level billing restriction. Follow the local commands in the validation report to reproduce results.
