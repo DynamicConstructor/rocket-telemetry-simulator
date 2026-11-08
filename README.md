@@ -19,7 +19,12 @@ Simulate the vertical flight of a simplified model rocket using small time steps
 python simulate.py --output telemetry.csv --chart altitude.svg
 python simulate.py --thrust 55 --mass 1.5 --burn 2.5 --output telemetry-high-thrust.csv --chart high-thrust.svg
 python -m unittest discover -s tests -v
+python compare_flights.py --summary scenario-summary.csv --chart scenario-comparison.svg
 ```
+
+The comparison script runs baseline, **15% higher thrust**, and **50% higher drag** scenarios, then exports a multi-series SVG and summary CSV with peak altitude, peak speed, and flight time. Its five additional tests assert physical directionality (higher thrust raises apogee and higher drag reduces it) plus output integrity. Ten Python tests now cover the simulator and comparison.
+
+**Validation caveat:** These results establish internal consistency of a deliberately simplified numerical model. They do not validate it against measured flight data, nor demonstrate a physically certified model.
 
 Open `altitude.svg` in a browser and inspect `telemetry.csv` in a spreadsheet. The program prints flight duration, estimated apogee, and maximum velocity.
 
@@ -51,10 +56,3 @@ Default settings produce an approximate **156 m apogee** and **12.7-second fligh
 ## Resume use
 
 Describe this as a **personal simulation project** only after Alexander has personally run, understood, and extended it. His original school rocket capstone should be documented separately if original evidence becomes available.
-
-## Portfolio evidence and technical review
-
-- [Cloud validation report](docs/VALIDATION.md) — dated test results and limitations
-- [Technical case study](docs/CASE-STUDY.md) — problem, approach, engineering decisions, and next personal contribution
-
-The cloud run was AI-assisted; it does not establish Alexander's independent authorship. GitHub Actions may be unavailable due to an account-level billing restriction. Follow the local commands in the validation report to reproduce results.
