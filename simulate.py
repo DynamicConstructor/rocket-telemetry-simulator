@@ -1,6 +1,7 @@
 """Simplified 1D model-rocket telemetry simulation; educational use only."""
 import argparse
 import csv
+import math
 from dataclasses import dataclass
 
 
@@ -18,10 +19,15 @@ class Config:
 
 
 def simulate(config=Config()):
+    numeric_values = vars(config).values()
+    if not all(math.isfinite(value) for value in numeric_values):
+        raise ValueError("Physical parameters must be finite numbers")
     if (config.mass_kg <= 0 or config.timestep <= 0 or config.max_time <= 0 or
             config.area_m2 < 0 or config.drag_coefficient < 0 or
             config.burn_seconds < 0 or config.thrust_newtons < 0):
         raise ValueError("Invalid physical configuration")
+    if config.max_time / config.timestep > 1_000_000:
+        raise ValueError("Simulation exceeds the one-million-step safety limit")
     t = altitude = velocity = 0.0
     samples = [{"time_s": t, "altitude_m": altitude, "velocity_m_s": velocity}]
     while t < config.max_time:
